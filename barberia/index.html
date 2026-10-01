@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop MZ | Barbería en Morelia</title>
+    <meta name="description" content="Barbería profesional en Morelia, Michoacán. Cortes de cabello modernos, fade, arreglo de barba y diseño con un estilo exclusivo. ¡Agendá tu cita!">
+    <meta name="keywords" content="Barbería en Morelia, Barber Shop Morelia, Cortes de cabello, Barba, Corte masculino, Fade, Barber Shop MZ">
+    
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Barber Shop MZ | Barbería en Morelia">
+    <meta property="og:description" content="Cortes, barba y estilo pensados para ti. Agenda tu cita en Morelia, Michoacán.">
+    <meta property="og:image" content="./assets/images/hero.jpg">
+    <meta property="og:url" content="https://barbershopmz.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        card: '#121212',
+                        charcoal: '#1a1a1a',
+                        gold: '#d4af37',
+                        'gold-light': '#f3e5ab',
+                    },
+                    fontFamily: {
+                        heading: ['Bebas Neue', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos Personalizados / Enlace a styles.css -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Estilos base críticos y transiciones suaves */
+        body {
+            background-color: #0a0a0a;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(10,10,10,0.4), rgba(10,10,10,0.95)), url('./assets/images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-bg {
+            background: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('./assets/images/barber-01.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Ocultar scrollbar en elementos horizontales si fuera necesario */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Barbershop",
+      "name": "Barber Shop MZ",
+      "image": "./assets/images/hero.jpg",
+      "@id": "",
+      "url": "https://barbershopmz.com",
+      "telephone": "+524430000000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Acueducto #100",
+        "addressLocality": "Morelia",
+        "addressRegion": "MIC",
+        "postalCode": "58000",
+        "addressCountry": "MX"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "20:00"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+</head>
+<body class="antialiased selection:bg-gold selection:text-black">
+
+    <!-- NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="text-2xl sm:text-3xl font-heading tracking-wider text-white group-hover:text-gold transition-colors">
+                    BARBER SHOP <span class="text-gold">MZ</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Servicios</a>
+                <a href="#galeria" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Galería</a>
+                <a href="#nosotros" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Nosotros</a>
+                <a href="#resenas" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Reseñas</a>
+                <a href="#ubicacion" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:block">
+                <a href="#" id="desktop-cta" class="bg-gold text-black px-5 py-2.5 rounded-none font-semibold text-sm tracking-wide uppercase hover:bg-gold-light transition-all shadow-lg shadow-gold/10">
+                    Agendar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" aria-label="Abrir menú" class="md:hidden text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="fixed inset-x-0 top-20 bg-dark/95 backdrop-blur-xl border-b border-white/10 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 md:hidden flex flex-col px-6 py-8 space-y-6 shadow-2xl">
+            <a href="#inicio" class="mobile-link text-lg font-medium text-gray-200 hover:text-gold transition-colors">Inicio</a>
+            <a href="#servicios" class="mobile-link text-lg font-medium text-gray-200 hover:text-gold transition-colors">Servicios</a>
+            <a href="#galeria" class="mobile-link text-lg font-medium text-gray-200 hover:text-gold transition-colors">Galería</a>
+            <a href="#nosotros" class="mobile-link text-lg font-medium text-gray-200 hover:text-gold transition-colors">Nosotros</a>
+            <a href="#resenas" class="mobile-link text-lg font-medium text-gray-200 hover:text-gold transition-colors">Reseñas</a>
+            <a href="#ubicacion" class="mobile-link text-lg font-medium text-gray-200 hover:text-gold transition-colors">Ubicación</a>
+            <a href="#" id="mobile-cta" class="w-full bg-gold text-black text-center py-3 font-semibold uppercase tracking-wider hover:bg-gold-light transition-colors mt-4">
+                Agendar por WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center hero-bg pt-20">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-12">
+            <span class="inline-block text-gold text-xs sm:text-sm uppercase tracking-widest font-semibold mb-4 border border-gold/30 px-3 py-1 bg-black/40 backdrop-blur-sm">
+                Morelia, Michoacán
+            </span>
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-heading uppercase text-white tracking-wider mb-6 leading-none">
+                TU ESTILO.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold">NUESTRA FIRMA.</span>
+            </h1>
+            <p class="text-gray-300 text-base sm:text-xl max-w-xl mx-auto mb-8 font-light">
+                Cortes, barba y estilo pensados para ti. Precisión, ambiente exclusivo y la mejor atención.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#" id="hero-main-btn" class="w-full sm:w-auto bg-gold text-black px-8 py-4 font-bold uppercase tracking-wider hover:bg-gold-light transition-all shadow-xl shadow-gold/20">
+                    Agendar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto border border-white/30 text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-white/10 transition-all">
+                    Ver Servicios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCIA / STATS BAR -->
+    <section class="border-y border-white/10 bg-card py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div class="p-4">
+                <p class="text-4xl sm:text-5xl font-heading text-gold mb-2">+1000</p>
+                <p class="text-gray-400 text-sm uppercase tracking-wider font-medium">Clientes atendidos</p>
+            </div>
+            <div class="p-4 border-y sm:border-y-0 sm:border-x border-white/10">
+                <p class="text-4xl sm:text-5xl font-heading text-gold mb-2">+5</p>
+                <p class="text-gray-400 text-sm uppercase tracking-wider font-medium">Años de experiencia</p>
+            </div>
+            <div class="p-4">
+                <p class="text-4xl sm:text-5xl font-heading text-gold mb-2">5★</p>
+                <p class="text-gray-400 text-sm uppercase tracking-wider font-medium">Calificación promedio</p>
+            </div>
+        </div>
+        <p class="text-center text-xs text-gray-600 mt-4">* Datos demostrativos personalizables en código.</p>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-20 sm:py-32 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-gold text-xs uppercase tracking-widest font-semibold block mb-2">EXPERTOS EN CUIDADO MASCULINO</span>
+            <h2 class="text-4xl sm:text-6xl font-heading uppercase tracking-wide text-white">ELIGE TU ESTILO</h2>
+            <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Servicio 1 -->
+            <div class="glass-card p-8 flex flex-col justify-between group hover:border-gold/50 transition-all duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-scissors text-gold text-2xl"></i>
+                        <span class="text-2xl font-heading text-gold">$250</span>
+                    </div>
+                    <h3 class="text-2xl font-heading text-white tracking-wide mb-2 group-hover:text-gold transition-colors">CORTE</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Corte de cabello moderno o clásico adaptado a tu morfología, lavado incluido y acabado profesional con producto.</p>
+                </div>
+                <button onclick="bookService('Corte')" class="w-full bg-charcoal hover:bg-gold hover:text-black text-white text-sm font-bold uppercase tracking-wider py-3 transition-colors border border-white/10 flex items-center justify-center gap-2">
+                    <span>Agendar</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="glass-card p-8 flex flex-col justify-between group hover:border-gold/50 transition-all duration-300 border-gold/30 bg-gradient-to-b from-charcoal/80 to-card">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-spray-can-sparkles text-gold text-2xl"></i>
+                        <span class="text-2xl font-heading text-gold">$380</span>
+                    </div>
+                    <span class="text-[10px] bg-gold text-black font-bold uppercase px-2 py-0.5 tracking-wider inline-block mb-2">Más Popular</span>
+                    <h3 class="text-2xl font-heading text-white tracking-wide mb-2 group-hover:text-gold transition-colors">CORTE + BARBA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">La experiencia completa. Corte de cabello a elección, perfilado de barba con toalla caliente, navaja y bálsamo hidratante.</p>
+                </div>
+                <button onclick="bookService('Corte + Barba')" class="w-full bg-gold text-black hover:bg-gold-light text-sm font-bold uppercase tracking-wider py-3 transition-colors flex items-center justify-center gap-2 shadow-lg">
+                    <span>Agendar</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="glass-card p-8 flex flex-col justify-between group hover:border-gold/50 transition-all duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-user-tie text-gold text-2xl"></i>
+                        <span class="text-2xl font-heading text-gold">$180</span>
+                    </div>
+                    <h3 class="text-2xl font-heading text-white tracking-wide mb-2 group-hover:text-gold transition-colors">BARBA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Diseño y perfilado de barba, aplicación de vapor, toallas calientes, aceite esencial y acabado perfecto al ras.</p>
+                </div>
+                <button onclick="bookService('Barba')" class="w-full bg-charcoal hover:bg-gold hover:text-black text-white text-sm font-bold uppercase tracking-wider py-3 transition-colors border border-white/10 flex items-center justify-center gap-2">
+                    <span>Agendar</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="glass-card p-8 flex flex-col justify-between group hover:border-gold/50 transition-all duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-child text-gold text-2xl"></i>
+                        <span class="text-2xl font-heading text-gold">$200</span>
+                    </div>
+                    <h3 class="text-2xl font-heading text-white tracking-wide mb-2 group-hover:text-gold transition-colors">CORTE INFANTIL</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Corte para los pequeños caballeros (hasta 11 años), paciencia, buen ambiente y estilo impecable.</p>
+                </div>
+                <button onclick="bookService('Corte Infantil')" class="w-full bg-charcoal hover:bg-gold hover:text-black text-white text-sm font-bold uppercase tracking-wider py-3 transition-colors border border-white/10 flex items-center justify-center gap-2">
+                    <span>Agendar</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
+
+            <!-- Servicio 5 -->
+            <div class="glass-card p-8 flex flex-col justify-between group hover:border-gold/50 transition-all duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <i class="fa-solid fa-wand-magic-sparkles text-gold text-2xl"></i>
+                        <span class="text-2xl font-heading text-gold">$450+</span>
+                    </div>
+                    <h3 class="text-2xl font-heading text-white tracking-wide mb-2 group-hover:text-gold transition-colors">DISEÑO & COLOR</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Decoloración, efectos de color, mechas, tintes y diseños personalizados (Freehand / Freestyle).</p>
+                </div>
+                <button onclick="bookService('Diseño y Color')" class="w-full bg-charcoal hover:bg-gold hover:text-black text-white text-sm font-bold uppercase tracking-wider py-3 transition-colors border border-white/10 flex items-center justify-center gap-2">
+                    <span>Agendar</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA (ESTILO EDITORIAL / MASONRY) -->
+    <section id="galeria" class="py-20 bg-charcoal/50 border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs uppercase tracking-widest font-semibold block mb-2">FEED EDITORIAL</span>
+                <h2 class="text-4xl sm:text-6xl font-heading uppercase tracking-wide text-white">NUESTRO TRABAJO</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+                <p class="text-gray-400 text-sm mt-4">Haz clic en cualquier imagen para ampliarla</p>
+            </div>
+
+            <!-- Grid de Galería con proporciones variadas -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="relative overflow-hidden group cursor-pointer row-span-2 rounded-lg" onclick="openLightbox('./assets/images/fade-01.jpg', 'Fade Moderno')">
+                    <img src="./assets/images/fade-01.jpg" alt="Fade Moderno" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-heading tracking-wide text-lg">Fade Moderno</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden group cursor-pointer rounded-lg" onclick="openLightbox('./assets/images/barba-01.jpg', 'Arreglo de Barba')">
+                    <img src="./assets/images/barba-01.jpg" alt="Arreglo de Barba" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-heading tracking-wide text-lg">Arreglo de Barba</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden group cursor-pointer row-span-2 rounded-lg" onclick="openLightbox('./assets/images/barber-01.jpg', 'Técnica y Precisión')">
+                    <img src="./assets/images/barber-01.jpg" alt="Barbero trabajando" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-heading tracking-wide text-lg">Técnica y Precisión</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden group cursor-pointer rounded-lg" onclick="openLightbox('./assets/images/fade-02.jpg', 'Crop & Taper Fade')">
+                    <img src="./assets/images/fade-02.jpg" alt="Crop" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-heading tracking-wide text-lg">Crop & Taper Fade</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden group cursor-pointer rounded-lg" onclick="openLightbox('./assets/images/corte-clasico-01.jpg', 'Estilo Clásico')">
+                    <img src="./assets/images/corte-clasico-01.jpg" alt="Corte Clásico" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-heading tracking-wide text-lg">Estilo Clásico</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden group cursor-pointer rounded-lg" onclick="openLightbox('./assets/images/hero.jpg', 'Ambiente MZ')">
+                    <img src="./assets/images/hero.jpg" alt="Ambiente Barber Shop" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-heading tracking-wide text-lg">Ambiente MZ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="py-20 sm:py-32 px-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-gold text-xs uppercase tracking-widest font-semibold block mb-2">FILOSOFÍA MZ</span>
+                <h2 class="text-4xl sm:text-6xl font-heading uppercase tracking-wide text-white mb-6">NO ES SOLO UN CORTE.</h2>
+                <p class="text-xl text-gold font-light mb-6">Es la forma en que te presentas al mundo.</p>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    En Barber Shop MZ combinamos la sastrería capilar tradicional con las tendencias urbanas más avanzadas. Cada detalle, desde la iluminación hasta la selección de productos de primera línea, está pensado para ofrecerte un espacio de desconexión y verdadero cuidado personal.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span>Asesoría de imagen personalizada incluida en cada servicio</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span>Bebida de cortesía y ambiente exclusivo</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-300">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span>Estirpe y herramientas esterilizadas con máxima higiene</span>
+                    </li>
+                </ul>
+                <a href="#" id="about-cta" class="inline-block bg-gold text-black px-8 py-4 font-bold uppercase tracking-wider hover:bg-gold-light transition-all shadow-lg">
+                    Reserva tu espacio
+                </a>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-2 bg-gradient-to-r from-gold to-transparent opacity-30 blur-lg"></div>
+                <div class="relative glass-card p-3 rounded-xl overflow-hidden">
+                    <img src="./assets/images/barber-01.jpg" alt="Interior Barber Shop MZ" loading="lazy" class="w-full h-[450px] object-cover rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section id="resenas" class="py-20 bg-charcoal/30 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs uppercase tracking-widest font-semibold block mb-2">TESTIMONIOS</span>
+                <h2 class="text-4xl sm:text-6xl font-heading uppercase tracking-wide text-white">LO QUE DICEN NUESTROS CLIENTES</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="glass-card p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic mb-6">"El mejor fade que me han hecho en Morelia. La atención al detalle es increíble y el trato es sumamente profesional. 100% recomendado."</p>
+                    </div>
+                    <div>
+                        <p class="font-heading text-lg tracking-wide text-white">Rodrigo S.</p>
+                        <p class="text-xs text-gray-500">Cliente verificado</p>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="glass-card p-8 flex flex-col justify-between border-gold/30 bg-gradient-to-b from-charcoal/80 to-card">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic mb-6">"Excelente ambiente, muy masculino y exclusivo. El servicio de corte con barba y toalla caliente es toda una experiencia de relajación."</p>
+                    </div>
+                    <div>
+                        <p class="font-heading text-lg tracking-wide text-white">Alejandro G.</p>
+                        <p class="text-xs text-gray-500">Cliente verificado</p>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="glass-card p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic mb-6">"Puntualidad, limpieza y excelentes productos. Encontré mi barbería de cabecera en Morelia sin duda alguna."</p>
+                    </div>
+                    <div>
+                        <p class="font-heading text-lg tracking-wide text-white">Mauricio M.</p>
+                        <p class="text-xs text-gray-500">Cliente verificado</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" id="reviews-btn" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-gold text-gold px-6 py-3 font-semibold text-sm uppercase tracking-wider hover:bg-gold hover:text-black transition-all">
+                    <span>Ver reseñas en Google</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <p class="text-xs text-gray-600 mt-2">* Reseñas demostrativas con enlace directo a Google Maps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion" class="py-20 sm:py-32 px-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-gold text-xs uppercase tracking-widest font-semibold block mb-2">ENCUÉNTRANOS</span>
+                <h2 class="text-4xl sm:text-6xl font-heading uppercase tracking-wide text-white mb-6">VISÍTANOS EN MORELIA</h2>
+                
+                <div class="space-y-6 text-gray-300 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl text-white tracking-wide">Dirección</h3>
+                            <p class="text-sm text-gray-400">Av. Acueducto #100, Zona Centro, Morelia, Michoacán, C.P. 58000</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl text-white tracking-wide">Horarios</h3>
+                            <p class="text-sm text-gray-400">Lunes a Sábado: 10:00 AM – 8:00 PM<br>Domingos: Cerrado</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl text-white tracking-wide">Contacto directo</h3>
+                            <p class="text-sm text-gray-400">+52 (443) 000-0000<br>contacto@barbershopmz.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" id="maps-btn" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-gold text-black px-8 py-4 font-bold uppercase tracking-wider hover:bg-gold-light transition-all shadow-lg">
+                    <span>Cómo llegar en Google Maps</span>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </a>
+            </div>
+
+            <div class="h-[400px] sm:h-[450px] w-full glass-card p-2 rounded-xl overflow-hidden">
+                <!-- Iframe de Google Maps genérico / reemplazable -->
+                <iframe title="Ubicación Barber Shop MZ" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.177099684346!2d-101.1912!3d19.7027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDQyJzEw" width="100%" height="100%" style="border:0; filter: grayscale(90%) contrast(120%) invert(90%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM FEED / SECCIÓN -->
+    <section class="py-20 bg-charcoal/50 border-t border-white/10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <span class="text-gold text-xs uppercase tracking-widest font-semibold block mb-2">REDES SOCIALES</span>
+            <h2 class="text-4xl sm:text-5xl font-heading uppercase tracking-wide text-white mb-6">SIGUE NUESTRO TRABAJO</h2>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto mb-8">Etiquétanos en tus fotos usando <span class="text-gold font-semibold">#BarberShopMZ</span> para aparecer en nuestro muro.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="relative overflow-hidden group rounded-lg aspect-square">
+                    <img src="./assets/images/fade-01.jpg" alt="Instagram 1" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden group rounded-lg aspect-square">
+                    <img src="./assets/images/barba-01.jpg" alt="Instagram 2" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden group rounded-lg aspect-square">
+                    <img src="./assets/images/fade-02.jpg" alt="Instagram 3" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden group rounded-lg aspect-square">
+                    <img src="./assets/images/corte-clasico-01.jpg" alt="Instagram 4" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+
+            <a href="#" id="instagram-btn" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-charcoal border border-white/20 text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-gold hover:text-black hover:border-gold transition-all">
+                <i class="fa-brands fa-instagram text-lg"></i>
+                <span>Ver Instagram</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="relative py-24 sm:py-32 cta-bg text-center">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <h2 class="text-5xl sm:text-7xl font-heading uppercase tracking-wider text-white mb-6">¿LISTO PARA TU PRÓXIMO CORTE?</h2>
+            <p class="text-gray-300 text-lg sm:text-xl max-w-xl mx-auto mb-10 font-light">
+                Agenda tu cita y sal con un estilo que hable por ti.
+            </p>
+            <a href="#" id="final-cta" class="inline-block bg-gold text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-gold-light transition-all shadow-2xl shadow-gold/30 text-lg">
+                Agendar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark border-t border-white/10 py-16 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <span class="text-2xl font-heading tracking-wider text-white">
+                    BARBER SHOP <span class="text-gold">MZ</span>
+                </span>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Barbería contemporánea y exclusiva en Morelia, Michoacán. El arte del buen corte y el cuidado masculino.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-heading text-lg text-white tracking-wider mb-4">Navegación</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#inicio" class="hover:text-gold transition-colors">Inicio</a></li>
+                    <li><a href="#servicios" class="hover:text-gold transition-colors">Servicios</a></li>
+                    <li><a href="#galeria" class="hover:text-gold transition-colors">Galería</a></li>
+                    <li><a href="#nosotros" class="hover:text-gold transition-colors">Nosotros</a></li>
+                    <li><a href="#ubicacion" class="hover:text-gold transition-colors">Ubicación</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-heading text-lg text-white tracking-wider mb-4">Contacto</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" id="footer-whatsapp" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-brands fa-whatsapp text-gold"></i> WhatsApp</a></li>
+                    <li><a href="#" id="footer-instagram" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-brands fa-instagram text-gold"></i> Instagram</a></li>
+                    <li><a href="#" id="footer-maps" class="hover:text-gold transition-colors flex items-center gap-2"><i class="fa-solid fa-location-dot text-gold"></i> Google Maps</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-heading text-lg text-white tracking-wider mb-4">Horarios</h3>
+                <p class="text-sm text-gray-400 mb-2">Lunes a Sábado:<br>10:00 AM – 8:00 PM</p>
+                <p class="text-xs text-gold">Morelia, Michoacán, México.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-600">
+            <p>&copy; 2026 Barber Shop MZ. Todos los derechos reservados.</p>
+            <p class="mt-2 sm:mt-0">Diseñado con estándares profesionales.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="#" id="floating-whatsapp" aria-label="Chat de WhatsApp" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform duration-300">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" aria-label="Cerrar lightbox" class="absolute top-6 right-6 text-white text-3xl hover:text-gold transition-colors focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Ampliada" class="max-h-[75vh] max-w-full object-contain rounded-lg border border-white/10 shadow-2xl">
+            <p id="lightbox-caption" class="font-heading text-2xl text-white tracking-wider mt-4"></p>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE CONFIGURACIÓN Y LÓGICA -->
+    <script>
+        // CONFIGURACIÓN CENTRALIZADA
+        const CONFIG = {
+            whatsapp: "524430000000", // Reemplazar con el número real de WhatsApp con código de país
+            instagram: "https://instagram.com", // Reemplazar con URL de Instagram
+            maps: "https://goo.gl/maps/ejemplo" // Reemplazar con enlace directo a Google Maps
+        };
+
+        // Enlazar enlaces dinámicos basados en CONFIG
+        document.addEventListener("DOMContentLoaded", () => {
+            const defaultMsg = encodeURIComponent("Hola, me gustaría agendar una cita.");
+            const waUrl = `https://wa.me/${CONFIG.whatsapp}?text=${defaultMsg}`;
+
+            // Asignar a todos los botones de agendar generales
+            ['desktop-cta', 'mobile-cta', 'hero-main-btn', 'about-cta', 'final-cta', 'floating-whatsapp', 'footer-whatsapp'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = waUrl;
+            });
+
+            // Asignar Instagram y Maps
+            ['instagram-btn', 'footer-instagram'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = CONFIG.instagram;
+            });
+
+            ['reviews-btn', 'maps-btn', 'footer-maps'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = CONFIG.maps;
+            });
+
+            // Menú Móvil Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    const isOpen = mobileMenu.classList.contains('translate-y-0');
+                    if (isOpen) {
+                        mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                        mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                        menuBtn.innerHTML = '<i class="fa-solid fa-bars text-2xl"></i>';
+                    } else {
+                        mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                        mobileMenu.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                        menuBtn.innerHTML = '<i class="fa-solid fa-xmark text-2xl"></i>';
+                    }
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                        mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                        menuBtn.innerHTML = '<i class="fa-solid fa-bars text-2xl"></i>';
+                    });
+                });
+            }
+
+            // Efecto Navbar Scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    navbar.classList.add('shadow-xl', 'bg-dark/90');
+                } else {
+                    navbar.classList.remove('shadow-xl');
+                }
+            });
+        });
+
+        // Función para agendar servicio específico vía WhatsApp
+        function bookService(serviceName) {
+            const message = encodeURIComponent(`Hola, quiero agendar un ${serviceName}.`);
+            const url = `https://wa.me/${CONFIG.whatsapp}?text=${message}`;
+            window.open(url, '_blank');
+        }
+
+        // Lightbox para la Galería
+        function openLightbox(imgSrc, captionText) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            lightboxImg.src = imgSrc;
+            lightboxCaption.textContent = captionText;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('flex');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar lightbox con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
